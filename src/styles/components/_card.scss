@@ -21,14 +21,17 @@
 	max-width: 320px;
 	display: flex;
 	flex-direction: column;
+
 	gap: 10px;
-	h2{
+	h2 {
 		color: $colorOrange;
 	}
 	p {
 		padding-top: 10px;
+		display: -webkit-box;
+		-webkit-line-clamp: 7;
+		-webkit-box-orient: vertical;  
+		overflow: hidden;
 	}
 }
 
-@media screen and (max-width: 1000px) {
-}

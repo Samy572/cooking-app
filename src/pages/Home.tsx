@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Card from '../components/Card';
 import SearchBar from '../components/SearchBar';
+import { CardProps } from '../interfaces/CardTypes';
 
 const Home = () => {
 	const [meal, setMeal] = useState([]);
@@ -15,10 +16,10 @@ const Home = () => {
 
 	return (
 		<div>
-			<h1>React Cook</h1>
+			<h1>Recipe ideas</h1>
 			<SearchBar setAxiosSearch={setAxiosSearch} />
 			<div className="container">
-				{meal ? meal.map((card, index) => <Card key={index} card={card} />) : <p className="noDatas">No food found 😥</p>}
+				{meal ? meal.map((card : CardProps, index) => <Card key={index} card={card}  />) : <p className="noDatas">No dishes found for your search. 😥</p>}
 			</div>
 		</div>
 	);
